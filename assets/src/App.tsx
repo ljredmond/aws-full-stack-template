@@ -14,7 +14,7 @@ interface AppState {
   isAuthenticating: boolean;
 }
 
-class App extends Component<AppProps, AppState> {
+export class App extends Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
 
@@ -43,14 +43,14 @@ class App extends Component<AppProps, AppState> {
 
   userHasAuthenticated = (authenticated: boolean) => {
     this.setState({ isAuthenticated: authenticated });
-  }
+  };
 
   handleLogout = async () => {
     await Auth.signOut();
 
     this.userHasAuthenticated(false);
     this.props.history.push("/login");
-  }
+  };
 
   showLoggedInBar = () => (
     <Form inline>
