@@ -6,5 +6,6 @@ cache:
     - node_modules
 script:
   - cd assets
+  - npm ci
   - npm test
   - npm run build
